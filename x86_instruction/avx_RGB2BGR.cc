@@ -81,7 +81,7 @@ int main()
     // print_m256i(v_dst0);
     std::vector<uint8_t> dst_vec(n, 0); // 内部寄存器地址没有报边界错误
     uint8_t *dst = dst_vec.data();
-
+    //细节,字节位数问题 256位向量
     _mm256_storeu_si256((__m256i *)dst, v_dst0);
     _mm256_storeu_si256((__m256i *)(dst + 32), v_dst1);
     _mm256_storeu_si256((__m256i *)(dst + 64), v_dst2);
